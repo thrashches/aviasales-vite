@@ -1,0 +1,24 @@
+.Header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    width: 100%;
+    padding: 20px;
+}
+
+.Header__logo {
+    display: block;
+}
+
+.Header__text {
+    display: block;
+    color: var(--colors-purple, #4E148C);
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    height: 36px;
+}

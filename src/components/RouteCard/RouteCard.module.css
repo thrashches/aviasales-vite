@@ -1,0 +1,93 @@
+.RouteCard {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    border-radius: 10px;
+    background: var(--colors-light-lavender, #E8EBF2);
+}
+
+.RouteCard__header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: center;
+    width: 100%;
+}
+
+.RouteCard__body {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
+}
+
+.price {
+    color: var(--colors-purple, #4E148C);
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.SmallHeader {
+    color: var(--colors-lavender, #858AE3);
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.cell {
+    color: var(--colors-purple, #4E148C);
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.alignLeft {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.alignRight {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+}
+
+.CompanyLogo {
+    max-width: 50%;
+    height: auto;
+}
+
+@media (min-width: 450px) {
+    .price {
+        font-size: 32px;
+    }
+
+    .RouteCard {
+        padding: 32px;
+        gap: 25px;
+    }
+
+    .RouteCard__body {
+        gap: 25px;
+    }
+}

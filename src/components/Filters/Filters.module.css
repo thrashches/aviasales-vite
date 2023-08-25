@@ -1,0 +1,10 @@
+.Filters {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    border-radius: 10px;
+    background: var(--colors-light-lavender, #E8EBF2);
+}
