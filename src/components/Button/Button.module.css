@@ -1,0 +1,13 @@
+.Button {
+    display: block;
+    width: 100%;
+    padding: 16px 20px;
+    border-radius: 10px;
+    background: var(--colors-purple, #4E148C);
+    color: var(--colors-white, #F7F9F7);
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
