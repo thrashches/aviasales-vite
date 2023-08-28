@@ -51,6 +51,8 @@ const filterSlice = createSlice({
     name: 'filter',
     initialState: initialState,
     reducers: {
+        getFilter: (state) => state,
+
         setFilter: (state, action) => {
             const newState = { ...state }
             newState.changes[action.payload.value] = action.payload;
@@ -64,4 +66,4 @@ const filterSlice = createSlice({
 })
 
 export default filterSlice.reducer;
-export const {setFilter, setCompany} = filterSlice.actions;
+export const {getFilter, setFilter, setCompany} = filterSlice.actions;

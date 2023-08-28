@@ -3,7 +3,8 @@ import {SyntheticEvent} from "react";
 
 export default function Filters() {
     const handleCheckboxChange = (e: SyntheticEvent) => {
-        console.log(e);
+        console.log(e.currentTarget.value);
+        console.log(e.currentTarget.checked);
     }
 
     return (
@@ -13,7 +14,7 @@ export default function Filters() {
                 <div className={style.Filters__items}>
                     <div className={style.Filters__items__item}>
                         <label className={style.CheckboxLabel} htmlFor={'nonStop'}>
-                            <input className={style.CheckboxHidden} type="checkbox" checked={true} id={'nonStop'}
+                            <input className={style.CheckboxHidden} type="checkbox" value={'0'} id={'nonStop'}
                                    onChange={handleCheckboxChange}/>
                             <span className={style.CheckboxFake}/>
                             Без пересадок
