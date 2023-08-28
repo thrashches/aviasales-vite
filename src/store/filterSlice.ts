@@ -1,7 +1,6 @@
 import {createSlice} from "@reduxjs/toolkit";
 
 
-
 interface IChange {
     value: number,
     label: string,
@@ -10,17 +9,26 @@ interface IChange {
 
 interface ICompany {
     value: string,
-    label: string,
     selected: boolean,
 }
 
+interface ICriteria {
+    value: string,
+}
 
-const initialState:{changes: IChange[], company: ICompany} = {
+export interface IFilterState {
+    filter: {
+        changes: IChange[],
+        company: ICompany,
+    }
+}
+
+const initialState: { changes: IChange[], company: ICompany, criteria: ICriteria } = {
     changes: [
         {
             value: 0,
             label: 'Без пересадок',
-            selected: true,
+            selected: false,
         },
         {
             value: 1,
@@ -40,30 +48,41 @@ const initialState:{changes: IChange[], company: ICompany} = {
     ],
     company: {
         value: 'victory',
-        label: 'Победа',
         selected: true,
+    },
+    criteria: {
+        value: 'cheapest',
     }
 }
-
 
 
 const filterSlice = createSlice({
     name: 'filter',
     initialState: initialState,
     reducers: {
-        getFilter: (state) => state,
-
         setFilter: (state, action) => {
-            const newState = { ...state }
-            newState.changes[action.payload.value] = action.payload;
-            return newState
+            const newState = {...state};
+            newState.changes[action.payload.value] = {
+                value: action.payload.value,
+                label: newState.changes[action.payload.value].label,
+                selected: action.payload.selected,
+            };
+            console.log(action.payload)
+            state.changes = newState.changes;
         },
         setCompany: (state, action) => {
-            const newState = { ...state };
+            const newState = {...state};
             newState.company = action.payload;
+            state.company = newState.company;
         },
+        setCriteria: (state, action) => {
+            const newState = {...state};
+            newState.criteria = action.payload;
+            state.criteria = newState.criteria;
+            console.log(state.criteria)
+        }
     }
 })
 
 export default filterSlice.reducer;
-export const {getFilter, setFilter, setCompany} = filterSlice.actions;
+export const {setFilter, setCompany, setCriteria} = filterSlice.actions;
