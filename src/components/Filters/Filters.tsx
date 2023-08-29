@@ -10,13 +10,13 @@ export default function Filters() {
 
     const handleCheckboxChange = (e: SyntheticEvent) => {
         dispatch(setFilter({
-            value: e.currentTarget.value,
-            selected: e.currentTarget.checked
+            value: (e.currentTarget as HTMLFormElement).value,
+            selected: (e.currentTarget as HTMLFormElement).checked
         }));
     };
 
     const handleRadioChange = (e: SyntheticEvent) => {
-        dispatch(setCompany({value: e.currentTarget.value, selected: true}));
+        dispatch(setCompany({value: (e.currentTarget as HTMLFormElement).value, selected: true}));
     }
 
     return (

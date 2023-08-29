@@ -20,6 +20,7 @@ export interface IFilterState {
     filter: {
         changes: IChange[],
         company: ICompany,
+        criteria: ICriteria,
     }
 }
 

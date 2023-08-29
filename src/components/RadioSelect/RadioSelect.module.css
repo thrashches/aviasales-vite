@@ -23,17 +23,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 
-/*.RadioSelect__input {*/
-/*    display: none;*/
-/*}*/
+.RadioSelect__input {
+    display: none;
+}
 
-.RadioSelect__input:checked+.RadioSelect__item:before {
+.RadioSelect__input:checked+.RadioSelect__item {
     display: block;
-    width: 30px;
-    height: 30px;
-    opacity: 1;
     background-color: var(--colors-purple, #4E148C);
     color: var(--colors-light-lavender, #E8EBF2) !important;
 }
