@@ -28,7 +28,9 @@ const companies: {[key: string]: {name: string, logo: string, alt: string}} = {
     },
 }
 
+
 export default function RouteCard(props: RouteCardProps) {
+    // Карточка билета
     const {ticket} = props;
 
     return (

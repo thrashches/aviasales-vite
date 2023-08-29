@@ -4,13 +4,14 @@ import {setFilter, IFilterState, setCompany} from "../../store/filterSlice.ts";
 import {useDispatch, useSelector} from "react-redux";
 
 export default function Filters() {
+    // Боковая панель фильтров
     const changes = useSelector((state: IFilterState) => state.filter.changes);
     const company = useSelector((state: IFilterState) => state.filter.company);
     const dispatch = useDispatch();
 
     const handleCheckboxChange = (e: SyntheticEvent) => {
         dispatch(setFilter({
-            value: (e.currentTarget as HTMLFormElement).value,
+            value: Number((e.currentTarget as HTMLFormElement).value),
             selected: (e.currentTarget as HTMLFormElement).checked
         }));
     };
@@ -26,7 +27,7 @@ export default function Filters() {
                 <div className={style.Filters__items}>
                     <div className={style.Filters__items__item}>
                         <label className={style.CheckboxLabel} htmlFor={'nonStop'}>
-                            <input className={style.CheckboxHidden} type="checkbox" value={'0'} id={'nonStop'}
+                            <input className={style.CheckboxHidden} type="checkbox" value={0} id={'nonStop'}
                                    checked={changes[0].selected}
                                    onChange={handleCheckboxChange}/>
                             <span className={style.CheckboxFake}/>
@@ -35,7 +36,7 @@ export default function Filters() {
                     </div>
                     <div className={style.Filters__items__item}>
                         <label className={style.CheckboxLabel} htmlFor={'1Change'}>
-                            <input className={style.CheckboxHidden} type="checkbox" value={'1'} id={'1Change'}
+                            <input className={style.CheckboxHidden} type="checkbox" value={1} id={'1Change'}
                                    checked={changes[1].selected}
                                    onChange={handleCheckboxChange}/>
                             <span className={style.CheckboxFake}/>
@@ -44,7 +45,7 @@ export default function Filters() {
                     </div>
                     <div className={style.Filters__items__item}>
                         <label className={style.CheckboxLabel} htmlFor={'2Change'}>
-                            <input className={style.CheckboxHidden} type="checkbox" value={'2'} id={'2Change'}
+                            <input className={style.CheckboxHidden} type="checkbox" value={2} id={'2Change'}
                                    checked={changes[2].selected}
                                    onChange={handleCheckboxChange}/>
                             <span className={style.CheckboxFake}/>
@@ -53,7 +54,7 @@ export default function Filters() {
                     </div>
                     <div className={style.Filters__items__item}>
                         <label className={style.CheckboxLabel} htmlFor={'3Change'}>
-                            <input className={style.CheckboxHidden} type="checkbox" value={'3'} id={'3Change'}
+                            <input className={style.CheckboxHidden} type="checkbox" value={3} id={'3Change'}
                                    checked={changes[3].selected}
                                    onChange={handleCheckboxChange}/>
                             <span className={style.CheckboxFake}/>

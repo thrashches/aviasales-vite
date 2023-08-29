@@ -102,6 +102,7 @@ function getRandomTime(): string {
 }
 
 function getRandomTimeAfter(startTime: string): string {
+    // Генерация времни после начала(для билетов)
     const startHour = Number(startTime.split(':')[0]);
     const startMinute = Number(startTime.split(':')[1]);
 
@@ -120,13 +121,6 @@ function getRandomNumber(min: number, max: number): number {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-
-// const generateRandomTime = (): string => {
-//     const hours = Math.floor(Math.random() * 24);
-//     const minutes = Math.floor(Math.random() * 60);
-//
-//     return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
-// };
 
 const generateRandomDate = (): string => {
     const year = new Date().getFullYear();

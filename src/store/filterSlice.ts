@@ -1,26 +1,29 @@
 import {createSlice} from "@reduxjs/toolkit";
 
 
-interface IChange {
+export interface IChange {
+    // Количество пересадок
     value: number,
     label: string,
     selected: boolean,
 }
 
-interface ICompany {
+export interface ICompany {
+    // Компания
     value: string,
     selected: boolean,
 }
 
-interface ICriteria {
+export interface ICriteria {
+    // Критерии сортировки
     value: string,
 }
 
 export interface IFilterState {
     filter: {
-        changes: IChange[],
-        company: ICompany,
-        criteria: ICriteria,
+        changes: IChange[], // Количество пересадок
+        company: ICompany, // Компания
+        criteria: ICriteria, // Критерии сортировки
     }
 }
 
@@ -68,7 +71,6 @@ const filterSlice = createSlice({
                 label: newState.changes[action.payload.value].label,
                 selected: action.payload.selected,
             };
-            console.log(action.payload)
             state.changes = newState.changes;
         },
         setCompany: (state, action) => {
@@ -80,7 +82,6 @@ const filterSlice = createSlice({
             const newState = {...state};
             newState.criteria = action.payload;
             state.criteria = newState.criteria;
-            console.log(state.criteria)
         }
     }
 })

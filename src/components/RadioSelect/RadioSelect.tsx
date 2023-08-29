@@ -3,7 +3,9 @@ import {useDispatch, useSelector} from "react-redux";
 import {SyntheticEvent} from "react";
 import {setCriteria, IFilterState} from "../../store/filterSlice";
 
+
 export default function RadioSelect() {
+    // Верхняя панель сортировки
     const criteria = useSelector((state: IFilterState) => state.filter.criteria);
     const dispatch = useDispatch();
     const handleRadioChange = (e: SyntheticEvent) => {

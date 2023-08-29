@@ -13,5 +13,5 @@ export interface Ticket {
     time: TicketTime;
     duration: number;
     date: string;
-    connectionAmount: number | null;
+    connectionAmount: number;
 }
