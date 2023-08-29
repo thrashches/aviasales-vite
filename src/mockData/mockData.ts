@@ -72,7 +72,7 @@ const generateTestData = (): Ticket[] => {
             from: airports[Math.floor(Math.random() * airports.length)].code,
             to: airports[Math.floor(Math.random() * airports.length)].code,
             company: generateRandomCompany(),
-            price: Math.floor(Math.random() * 1000),
+            price: Math.floor(Math.random() * 100000),
             currency: 'RUB',
             time: ticketTime,
             duration: duration,
